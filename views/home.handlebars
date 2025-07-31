@@ -1,0 +1,12 @@
+<h1>Campaign List</h1>
+<a href="/new">+ Create New</a>
+{{#each campaigns}}
+  <div>
+    <h3>{{this.title}} - {{this.status}}</h3>
+    <ul>
+      {{#each this.logs}}
+        <li>{{this.recipient}} - {{this.status}}</li>
+      {{/each}}
+    </ul>
+  </div>
+{{/each}}

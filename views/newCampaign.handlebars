@@ -1,0 +1,9 @@
+<h1>New Campaign</h1>
+<form method="POST" action="/create"
+    style="display: flex; flex-direction:column;max: width 600px;padding:2px;gap: 4px;Justify-content:center">
+    <input name="title" placeholder="Title" required style="width: 200px;padding:2px" />
+    <textarea name="message" placeholder="HTML Message" required style="width: 200px;height:200px; padding:2px"></textarea>
+     <textarea name="recipients" placeholder="Email1, Email2, ..." required rows="4" cols="50" style="padding: 8px;width: 200px;"></textarea>
+    <input type="datetime-local" name="scheduledTime" required style="width: 200px; padding:2px" />
+    <button type="submit" style="width: 200px;background-color:black;color:white; padding:2px">Schedule</button>
+</form>
