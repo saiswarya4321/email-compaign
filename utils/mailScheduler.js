@@ -20,6 +20,8 @@ function scheduleCampaign(campaign) {
 
   cron.schedule(cronTime, async () => {
     console.log(`📨 Sending campaign "${campaign.title}"...`);
+    console.log(`📅 Campaign "${campaign.title}" scheduled at ${jobTime.toISOString()}`);
+
 
     const logs = [];
     for (const email of campaign.recipients) {
