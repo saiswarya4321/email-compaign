@@ -21,12 +21,19 @@ app.engine('handlebars', exphbs.engine({
 }));
 app.set('view engine', 'handlebars');
 
+
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.use('/', campaignRoutes);
+app.get('/run-campaigns', async (req, res) => {
+  const pending = await Campaign.find({ status: 'pending' });
+  pending.forEach(scheduleCampaign);
+  res.send('✅ Campaigns scheduled');
+});
+
 
 // Server
 const PORT = process.env.PORT || 3000;
